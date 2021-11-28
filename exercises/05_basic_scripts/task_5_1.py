@@ -46,3 +46,7 @@ london_co = {
         "routing": True,
     },
 }
+#print(london_co[input("Введите hostname устройства:")]) для читаемости:
+i = input("Введите hostname устройства:")
+o = london_co[i]
+print(o)
