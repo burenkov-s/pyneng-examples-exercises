@@ -50,7 +50,6 @@ london_co = {
         "routing": True,
     },
 }
-print(london_co["r2"].keys())
-# host = input("Введите имя устройства")
-# param = input("Введите имя параметра (" + str(london_co.keys()) + ")")
-# print(london_co[host][param])
+host = input("Введите имя устройства")
+param = input("Введите имя параметра (" + ", ".join(london_co[host].keys()) + ")")
+print(london_co[host][param])
