@@ -41,3 +41,26 @@ bin_ip = "00001010000000010000000111000011"
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+ip = input("Введите айпи адрес и маску сети:")
+ip, netmask = ip.split("/")
+ip = ip.split(".")
+netmask = "1" * int(netmask) + "0" * (32 - int(netmask))
+
+m0, m1, m2, m3 = [netmask[0:8],
+                  netmask[8:16],
+                  netmask[16:24],
+                  netmask[24:32]
+                  ]
+oct0, oct1, oct2, oct3 = [int(ip[0]) & int(m0),
+                          int(ip[1]) & int(m1),
+                          int(ip[2]) & int(m2),
+                          int(ip[3]) & int(m3)
+                          ]
+
+print("Network:")
+print("{:<8} {:<8} {:<8} {:<8}".format(oct0, oct1, oct2, oct3))
+print("{:08b} {:08b} {:08b} {:08b}".format(oct0, oct1, oct2, oct3))
+
+print("Mask:")
+print("{:<8} {:<8} {:<8} {:<8}".format(int(m0, 2), int(m1, 2), int(m2, 2), int(m3, 2)))
+print("{:<08} {:<08} {:<08} {:<08}".format(int(m0), int(m1), int(m2), int(m3)))
