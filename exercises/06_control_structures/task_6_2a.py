@@ -18,7 +18,7 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
 ip = input("Введите IP адрес:")
-ip_is_correct = False
+ip_is_correct = True
 octets = ip.split(".")
 if len(octets) == 4:
     for octet in octets:
