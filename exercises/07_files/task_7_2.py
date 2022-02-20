@@ -39,3 +39,8 @@ interface Ethernet0/3
 ...
 
 """
+import sys
+file = open(sys.argv[1], 'r')
+for line in file:
+    if not (line=="!\n" or line=="\n"):
+        print(line, end='')

@@ -17,3 +17,13 @@
 """
 
 ignore = ["duplex", "alias", "configuration"]
+
+import sys
+file = open(sys.argv[1], 'r')
+for line in file:
+    if not (line=="!\n" or line=="\n"):
+        for word in ignore:
+            if word in line:
+                line = ''
+                break
+        print(line, end='')
