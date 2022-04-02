@@ -20,3 +20,10 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+with open('CAM_table.txt', 'r') as file:
+    for line in file:
+        line = line.strip()
+        if line:
+            if line[0].isdigit():
+                vlan, mac, type, interface = line.split()
+                print("{:<7} {:17} {:7}".format(vlan, mac, interface))
