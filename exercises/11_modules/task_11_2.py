@@ -34,3 +34,14 @@ infiles = [
     "sh_cdp_n_r2.txt",
     "sh_cdp_n_r3.txt",
 ]
+
+from task_11_1 import  parse_cdp_neighbors
+
+def create_network_map(filenames):
+    result = dict()
+    for file in filenames:
+        with open(file, 'r') as f:
+            for value, key in parse_cdp_neighbors(f.read()).items():
+                result[value] = key
+    return result
+print(create_network_map(infiles))
